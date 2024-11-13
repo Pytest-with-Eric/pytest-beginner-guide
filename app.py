@@ -7,6 +7,8 @@ def subtract(a, b):
 
 
 def login(username, password):
-    if username == "admin" and password == "secret":
-        return "Login successful"
-    return "Invalid credentials"
+    if not username:
+        raise ValueError("Username cannot be empty.")
+    if len(password) < 6:
+        raise ValueError("Password must be at least 6 characters long.")
+    return "Login successful"
